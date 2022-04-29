@@ -19,6 +19,7 @@ public class Baekjun_2751 {
 		for (int value : arrayList) {
 			sb.append(value).append('\n');
 		}
+		
 		System.out.println(sb);
 		br.close();
 	}
