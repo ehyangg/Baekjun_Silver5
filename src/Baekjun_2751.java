@@ -1,23 +1,25 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.io.*;
+import java.util.*;
 
 public class Baekjun_2751 {
-	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int[] arr = new int[n];
-		
-		for(int i=0; i<n; i++) {
-			arr[i] = sc.nextInt();
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		int n = Integer.parseInt(br.readLine());
+
+		HashSet<Integer> hashSet = new HashSet<Integer>();
+		for (int i = 0; i < n; i++) {
+			hashSet.add(Integer.parseInt(br.readLine()));
 		}
-		
-		Arrays.sort(arr);
-		for(int i=0; i<n; i++) {
-			if(arr[i]==arr[i+1]) {
-				arr[i+1] = arr[i];
-			}
-			System.out.println(arr[i]);
+		ArrayList<Integer> arrayList = new ArrayList<Integer>(hashSet);
+		Collections.sort(arrayList);
+
+		for (int value : arrayList) {
+			sb.append(value).append('\n');
 		}
+		System.out.println(sb);
+		br.close();
 	}
 }
